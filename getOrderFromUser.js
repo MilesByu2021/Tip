@@ -1,4 +1,8 @@
 export const getOrderFromUser = () => {
-  let userOrder = prompt("What would you like to order?").toLowerCase();
-  return userOrder;
+  let userOrder = undefined;
+  while (userOrder == undefined || userOrder == null) {
+    userOrder = prompt("What would you like to order?");
+  }
+  const lowerCaseUserOrder = userOrder.toLowerCase();
+  return lowerCaseUserOrder;
 };

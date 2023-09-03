@@ -9,11 +9,9 @@ export const getTip = () => {
 
   for (let key in fastFoodMenu) {
     const lowerCaseFastFoodName = fastFoodMenu[key]["name"].toLowerCase();
-    while (userOrder == undefined || userOrder != lowerCaseFastFoodName) {
-      userOrder = getOrderFromUser();
-    }
-    if (userOrder === lowerCaseFastFoodName) {
-      return getRightOrder(fastFoodMenu[key]["price"]);
-    }
+    
+    return userOrder === lowerCaseFastFoodName
+      ? getRightOrder(fastFoodMenu[key]["price"])
+      : getOrderFromUser();
   }
 };
